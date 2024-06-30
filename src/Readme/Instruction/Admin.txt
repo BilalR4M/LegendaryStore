@@ -1,0 +1,31 @@
+First create the database(shop_db)
+
+Here are the instruction for an admin to add items
+
+1.Login with default admin account (name:" admin " pw : " 111 "   ) (localhost/LegendaryStore/src/admin/dashboard.php)
+
+2.Go to see products page
+
+3.Go to add product
+
+4.Fill the required product details
+
+5.Click add product 
+
+
+here some admin accounts in the database
+
+name:Radhi
+pw:2001
+
+name:Anton
+pw:2002
+
+name:Lemon
+pw:2003
+
+name:Kakashi
+pw:2004
+
+name:Temari
+pw:2005
