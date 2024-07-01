@@ -5,9 +5,9 @@
    --orange:#f39c12;
    --red:#e74c3c;
    --black:#444;
-   --white:#ffdada;
-   --light-color:#777;
-   --light-bg:#e2e2e2;
+   --white:#ffffff;
+   --light-color:#97b8eed0;
+   --light-bg:#657fc0;
    --border:.2rem solid var(--black);
    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
 }
