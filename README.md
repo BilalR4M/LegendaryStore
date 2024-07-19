@@ -3,7 +3,7 @@
 This is a PHP-based online market place web application that runs locally using XAMPP and MySQL. The website demonstrates basic functionalities such as connecting to a MySQL database, performing CRUD operations, and displaying data on web pages.
 
 ## Snaps 📷
-![Image Description](src/snaps/LSadmin_1.png)
+
 
 ## Prerequisites
 
@@ -49,6 +49,5 @@ if ($conn->connect_error) {
 ?>
 ```
 - Now view the site (http://localhost/LegendayStore/src)
-NOTE - The directory path for accessing the LegendayStore project may vary depending on how you save it in the htdocs folder of your local server environment. Ensure that the LegendayStore directory is placed correctly in the htdocs folder. For example, if you save it as LegendayStore/src, you should access it via http://localhost/LegendayStore/src.
-
-To access the admin dashboard navigate to http://localhost/LegendayStore/src/admin/dashboard manually and login with the default admin credentials(name : 'admin', password : '111').
+  
+- To access the admin dashboard navigate to http://localhost/LegendayStore/src/admin/dashboard manually and login with the default admin credentials(name : 'admin', password : '111').
