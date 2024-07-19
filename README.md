@@ -4,6 +4,24 @@ This is a PHP-based online market place web application that runs locally using 
 
 ## Snaps 📷
 
+![Image Description](src/snaps/LSsnap_1.png)
+![Image Description](src/snaps/LSsnap_2.png)
+![Image Description](src/snaps/LSsnap_3.png)
+![Image Description](src/snaps/LSsnap_4.png)
+![Image Description](src/snaps/LSsnap_5.png)
+![Image Description](src/snaps/LSsnap_6.png)
+![Image Description](src/snaps/LSsnap_7.png)
+![Image Description](src/snaps/LSsnap_8.png)
+![Image Description](src/snaps/LSsnap_9.png)
+![Image Description](src/snaps/LSsnap_10.png)
+
+![Image Description](src/snaps/LSadmin_1.png)
+![Image Description](src/snaps/LSadmin_2.png)
+![Image Description](src/snaps/LSadmin_3.png)
+![Image Description](src/snaps/LSadmin_4.png)
+![Image Description](src/snaps/LSadmin_5.png)
+![Image Description](src/snaps/LSadmin_6.png)
+![Image Description](src/snaps/LSadmin_7.png)
 
 ## Prerequisites
 
