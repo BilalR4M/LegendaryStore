@@ -2,6 +2,9 @@
 
 This is a PHP-based online market place web application that runs locally using XAMPP and MySQL. The website demonstrates basic functionalities such as connecting to a MySQL database, performing CRUD operations, and displaying data on web pages.
 
+## Snaps 📷
+![Image Description](src/snaps/LSadmin_1.png)
+
 ## Prerequisites
 
 - [XAMPP](https://www.apachefriends.org/index.html) (Apache, MySQL, PHP)
@@ -22,6 +25,29 @@ This is a PHP-based online market place web application that runs locally using 
 - Clone the repository in htdocs folder("..\xampp\htdocs")
 - Run Apache and SQL servers using the XAMPP Control Pannel
 - Go to phpmyadmin(http://localhost/phpmyadmin/) and create the shop_db and run the shop_db query (copy or import from src\Readme\database\shopdb.sql)
+- Configure Database Connection:
+
+Open the components/config.php file in the root directory of the project and update the database connection settings:
+
+php
+Copy code
+```
+<?php
+
+$db_name = 'mysql:host=localhost;dbname=shop_db';
+$user_name = 'root';
+$user_password = '';
+
+$conn = new PDO($db_name, $user_name, $user_password);
+
+?>
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+?>
+```
 - Now view the site (http://localhost/LegendayStore/src)
 NOTE - The directory path for accessing the LegendayStore project may vary depending on how you save it in the htdocs folder of your local server environment. Ensure that the LegendayStore directory is placed correctly in the htdocs folder. For example, if you save it as LegendayStore/src, you should access it via http://localhost/LegendayStore/src.
 
