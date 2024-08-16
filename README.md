@@ -48,7 +48,6 @@ This is a PHP-based online market place web application that runs locally using 
 Open the components/config.php file in the root directory of the project and update the database connection settings:
 
 php
-Copy code
 ```
 <?php
 
