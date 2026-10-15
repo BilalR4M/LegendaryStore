@@ -46,11 +46,95 @@ flowchart LR
 
 ## Data model
 
-![Entity relationship diagram](docs/erd.png)
+`admins` is a separate account table. It has no foreign key to shoppers, carts, or messages.
+
+```mermaid
+erDiagram
+    users ||--o{ orders : places
+    users ||--o{ cart : keeps
+    users ||--o{ wishlist : saves
+    users |o--o{ messages : sends
+    orders ||--|{ order_items : contains
+    products |o--o{ order_items : "price snapshot"
+    products ||--o{ cart : "added to"
+    products ||--o{ wishlist : "saved in"
+
+    users {
+        int id PK
+        string name
+        string email UK
+        string password
+        datetime created_at
+    }
+    admins {
+        int id PK
+        string name UK
+        string password
+        datetime created_at
+    }
+    products {
+        int id PK
+        string name
+        string details
+        int price
+        string category
+        string image_01
+        string image_02
+        string image_03
+        datetime created_at
+    }
+    cart {
+        int id PK
+        int user_id FK
+        int pid FK
+        string name
+        int price
+        int quantity
+        string image
+        datetime created_at
+    }
+    wishlist {
+        int id PK
+        int user_id FK
+        int pid FK
+        string name
+        int price
+        string image
+        datetime created_at
+    }
+    orders {
+        int id PK
+        int user_id FK
+        string name
+        string number
+        string email
+        string method
+        string address
+        int total_price
+        string payment_status
+        date placed_on
+        datetime created_at
+    }
+    order_items {
+        int id PK
+        int order_id FK
+        int product_id FK
+        string name
+        int quantity
+        int unit_price
+    }
+    messages {
+        int id PK
+        int user_id FK
+        string name
+        string email
+        string number
+        string message
+        datetime created_at
+    }
+```
 
 `orders` keeps the buyer and the total. `order_items.unit_price` stores the price that was charged, so later product edits do not change old orders. Users have a unique email. Cart, wishlist, and message rows are removed with the user. Deleting a product clears cart and wishlist rows and leaves the order line in place with a null product id.
-
-The diagram source is [docs/erd.svg](docs/erd.svg).
 
 ## Setup
 
