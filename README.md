@@ -165,6 +165,28 @@ Open the shop at <http://localhost/LegendaryStore/public>.
 
 Open the admin login at <http://localhost/LegendaryStore/admin/login.php>. The seeded admin username is `admin`. The password is recorded only in a comment at the top of `database/seed.sql`.
 
+## Setup with Docker
+
+Install [Docker Desktop](https://www.docker.com/products/docker-desktop/). PHP, Composer, and MySQL do not need to be installed on the machine. From the project folder:
+
+```bash
+docker compose -f infra/docker-compose.yml up --build -d
+```
+
+The first start builds the PHP image, creates `shop_db`, and loads `database/schema.sql` and `database/seed.sql`. If `app/config/config.php` is missing, the web container copies `infra/config.php` into place. That file points at the Compose service `mysql` with user `root` and password `shop`. If `config.php` already exists from an XAMPP setup, change `host` to `mysql` and `pass` to `shop` before opening the site. Composer autoload is installed inside the container when `vendor/autoload.php` is missing.
+
+Open the shop at <http://localhost:8080/public>.
+
+Open the admin login at <http://localhost:8080/admin/login.php>. The admin account is the same seeded account described above.
+
+Stop the containers with:
+
+```bash
+docker compose -f infra/docker-compose.yml down
+```
+
+`down` keeps the database volume. Add `-v` only when you want the next start to import the schema and seed again.
+
 ## Known limitations / future work
 
 - Payment method is stored as a label. The shop does not charge a card or call a payment provider.
